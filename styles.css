@@ -97,7 +97,8 @@ img {
   transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active { /* Added .active class for highlighting */
   color: var(--primary-color);
 }
 

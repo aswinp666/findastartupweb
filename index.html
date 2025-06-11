@@ -13,10 +13,9 @@
       <img src="https://c.animaapp.com/mbnsh24piRijf0/img/logo-1.png" alt="Find Startup Logo" class="logo" />
       <nav>
         <ul class="main-nav">
-          <li><a href="#home">Home</a></li>
+          <li><a href="#hero">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#career">Career</a></li>
-          <li><a href="#project">Project</a></li>
+          <li><a href="#join">Career</a></li> <li><a href="#project">Project</a></li>
         </ul>
       </nav>
     </header>
@@ -129,8 +128,7 @@
           </article>
         </div>
       </section>
-      <section id="join" class="join">
-        <div class="join-text-content" data-aos="fade-right">
+      <section id="join" class="join"> <div class="join-text-content" data-aos="fade-right">
           <h2>Join Our Team</h2>
           <p>Join a team that thrives on innovation and creativity. Explore opportunities to grow with us!</p>
           <a href="#available-positions" class="cta-button">Available Positions</a>
@@ -287,6 +285,41 @@
           // Remove 'selected' from all time slots (if only one can be selected)
           timeSlots.forEach(ts => ts.classList.remove('selected'));
           // Add 'selected' to the clicked slot
+          slot.classList.add('selected');
+        });
+      });
+
+      // Smooth Scrolling and Active Navigation Link Highlighting
+      document.querySelectorAll('.main-nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.main-nav a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          // Adjust scroll position to activate link slightly before section is fully visible
+          if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+          }
         });
       });
     </script>
