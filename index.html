@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    </head>
+  </head>
   <body>
     <header class="top">
       <img src="https://c.animaapp.com/mbnsh24piRijf0/img/logo-1.png" alt="Find Startup Logo" class="logo" />
       <nav>
         <ul class="main-nav">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#join">Career</a></li> <li><a href="#project">Project</a></li>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#join" class="nav-link">Career</a></li>
+          <li><a href="#project" class="nav-link">Project</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+
+    <!-- Main Content Wrapper (all scrollable sections go inside here) -->
+    <div id="mainContentWrapper">
       <section id="hero" class="hero" data-aos="fade-up">
         <h1 class="hero-title">BUILD.LAUNCH.GROW</h1>
         <p class="hero-subtitle">Fast-track your startup journey with expert guidance and support</p>
         <p class="hero-subtitle">Transform your ideas into thriving businesses with our comprehensive startup support</p>
-        <a href="#get-started" class="cta-button">Get Started</a>
+        <a href="#get-started" class="cta-button">Book a Call</a>
       </section>
+
       <section id="about" class="about">
         <div class="about-card" data-aos="fade-up">
           <div class="about-text-content">
@@ -48,6 +54,7 @@
           </div>
         </div>
       </section>
+
       <section id="services" class="services">
         <div class="services-header" data-aos="fade-up">
           <h2>Our Services</h2>
@@ -128,12 +135,20 @@
           </article>
         </div>
       </section>
-      <section id="join" class="join"> <div class="join-text-content" data-aos="fade-right">
+
+      <section id="join" class="join">
+        <div class="join-text-content" data-aos="fade-right">
           <h2>Join Our Team</h2>
           <p>Join a team that thrives on innovation and creativity. Explore opportunities to grow with us!</p>
-          <a href="#available-positions" class="cta-button">Available Positions</a>
+          <a href="#" class="cta-button" id="availablePositionsBtn">Available Positions</a>
         </div>
-        <div class="join-process-container" data-aos="fade-left">
+      </section>
+
+      <!-- New Section for Process Road Map -->
+      <section id="process" class="process">
+        <h2 data-aos="fade-up">Our Workflow Process</h2>
+        <p class="process-subtitle" data-aos="fade-up" data-aos-delay="100">See how we streamline your startup's journey from idea to success.</p>
+        <div class="process-road-map-container" data-aos="fade-left">
           <img
             src="/images/Screenshot 2025-06-08 211333.png"
             alt="Process Road Map"
@@ -141,6 +156,7 @@
           />
         </div>
       </section>
+
       <section id="project" class="project">
         <h2 data-aos="fade-up">Our Projects</h2>
         <div class="project-carousel" data-aos="fade-up" data-aos-delay="100">
@@ -171,7 +187,132 @@
           />
         </div>
       </section>
-    </main>
+
+      <!-- New Contact Us Section -->
+      <section id="contact" class="contact">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">Have questions or ready to start your journey? Contact us today!</p>
+        <div class="contact-content-wrapper">
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+            <h3>Contact Information</h3>
+            <p><i class="icon-email">📧</i> info@findstartup.com</p>
+            <p><i class="icon-phone">📞</i> +1 (123) 456-7890</p>
+            <p><i class="icon-address">📍</i> 123 Startup Avenue, Innovation City, ST 12345</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">F</a>
+              <a href="#" class="social-icon">T</a>
+              <a href="#" class="social-icon">L</a>
+            </div>
+          </div>
+          <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="visually-hidden">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email" class="visually-hidden">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <label for="message" class="visually-hidden">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="submit-button cta-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div> <!-- End of #mainContentWrapper -->
+
+    <!-- Careers Page Section (initially hidden, acts as a separate view) -->
+    <section id="careers-page" class="careers-page hidden-section">
+      <button class="back-button" id="backToMainBtn">&larr; Back to Main Site</button>
+      <h2 data-aos="fade-up">Available Positions</h2>
+      <p class="careers-subtitle" data-aos="fade-up" data-aos-delay="100">Explore exciting opportunities to join our innovative team.</p>
+
+      <div class="job-listings-grid">
+        <article class="job-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Senior Full-Stack Developer</h3>
+          <p class="job-location">Remote - Full-time</p>
+          <p class="job-description">We're seeking an experienced Full-Stack Developer to build scalable web applications using modern frameworks. Proficient in React, Node.js, and database technologies.</p>
+          <ul class="job-skills">
+            <li>React</li>
+            <li>Node.js</li>
+            <li>MongoDB</li>
+            <li>AWS</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+
+        <article class="job-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Product Manager</h3>
+          <p class="job-location">New York, NY - Full-time</p>
+          <p class="job-description">Lead the development and launch of new products. Define product vision, strategy, and roadmap based on market research and user needs.</p>
+          <ul class="job-skills">
+            <li>Product Strategy</li>
+            <li>Agile</li>
+            <li>User Research</li>
+            <li>Market Analysis</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+
+        <article class="job-card" data-aos="fade-up" data-aos-delay="400">
+          <h3>UI/UX Designer</h3>
+          <p class="job-location">London, UK - Full-time</p>
+          <p class="job-description">Create intuitive and visually appealing user interfaces. Conduct user research, create wireframes, prototypes, and high-fidelity designs.</p>
+          <ul class="job-skills">
+            <li>Figma</li>
+            <li>Sketch</li>
+            <li>User Flows</li>
+            <li>Prototyping</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+
+        <article class="job-card" data-aos="fade-up" data-aos-delay="500">
+          <h3>DevOps Engineer</h3>
+          <p class="job-location">Remote - Full-time</p>
+          <p class="job-description">Automate and streamline our operations and development processes. Experience with CI/CD pipelines, containerization (Docker, Kubernetes), and cloud platforms.</p>
+          <ul class="job-skills">
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>CI/CD</li>
+            <li>Azure</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+
+        <article class="job-card" data-aos="fade-up" data-aos-delay="600">
+          <h3>Data Scientist</h3>
+          <p class="job-location">Bengaluru, India - Full-time</p>
+          <p class="job-description">Analyze large datasets to extract actionable insights. Develop predictive models and machine learning algorithms to drive business decisions.</p>
+          <ul class="job-skills">
+            <li>Python</li>
+            <li>R</li>
+            <li>SQL</li>
+            <li>Machine Learning</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+
+        <article class="job-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Marketing Specialist</h3>
+          <p class="job-location">Remote - Full-time</p>
+          <p class="job-description">Develop and execute marketing campaigns across various channels. Analyze campaign performance and optimize strategies for growth.</p>
+          <ul class="job-skills">
+            <li>Digital Marketing</li>
+            <li>SEO/SEM</li>
+            <li>Content Marketing</li>
+            <li>Social Media</li>
+          </ul>
+          <button class="apply-button cta-button">Apply Now</button>
+        </article>
+      </div>
+      <p class="end-of-listings" data-aos="fade-up" data-aos-delay="800">Don't see a role that fits? <a href="#contact" class="in-text-link">Send us your resume</a>!</p>
+    </section>
 
     <div id="quickCallModal" class="modal-overlay">
       <div class="modal-content">
@@ -238,7 +379,18 @@
               <button class="time-slot">11:30 AM</button>
             </div>
           </div>
+          <button class="book-call-button">Book Call</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="successMessage" class="success-message-overlay">
+      <div class="success-message-content">
+        <div class="tick-animation">
+          &#10004;
+        </div>
+        <p>Call Booked Successfully!</p>
       </div>
     </div>
 
@@ -246,82 +398,159 @@
     <script>
       AOS.init();
 
-      // JavaScript for the Modal
+      const mainContentWrapper = document.getElementById('mainContentWrapper');
+      const careersPage = document.getElementById('careers-page');
+      const navLinks = document.querySelectorAll('.main-nav .nav-link');
       const getStartedButton = document.querySelector('.cta-button');
       const quickCallModal = document.getElementById('quickCallModal');
       const closeModalButton = document.querySelector('.modal-header .close-button');
+      const bookCallButton = document.querySelector('.book-call-button');
+      const successMessage = document.getElementById('successMessage');
+      const availablePositionsBtn = document.getElementById('availablePositionsBtn');
+      const backToMainBtn = document.getElementById('backToMainBtn'); // New: Back button on careers page
 
+      // Function to navigate between main content and careers page
+      function navigateTo(pageId) {
+        if (pageId === 'careers-page') {
+          mainContentWrapper.style.display = 'none';
+          careersPage.style.display = 'block';
+          // Remove active class from all nav links, then add to 'Career'
+          navLinks.forEach(link => link.classList.remove('active'));
+          document.querySelector('.main-nav a[href="#join"]').classList.add('active'); // Highlight Career link
+          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of careers page
+        } else {
+          mainContentWrapper.style.display = 'block';
+          careersPage.style.display = 'none';
+          // Navigation links handle their own active state and scrolling
+          // Scroll to specific section if hash exists, otherwise just show main content
+          const targetSection = document.querySelector(pageId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        AOS.refresh(); // Refresh AOS animations when content visibility changes
+      }
+
+      // Initial load: Ensure main content is visible and careers page is hidden
+      document.addEventListener('DOMContentLoaded', () => {
+        mainContentWrapper.style.display = 'block';
+        careersPage.style.display = 'none';
+        // Set initial active nav link based on current hash or default to 'hero'
+        const initialHash = window.location.hash || '#hero';
+        document.querySelector(`.main-nav a[href="${initialHash}"]`).classList.add('active');
+      });
+
+      // Event listener for main navigation links (scroll to section)
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetHref = this.getAttribute('href');
+          // Hide careers page if currently visible
+          if (careersPage.style.display === 'block') {
+              navigateTo(targetHref); // This will show main content and scroll
+          } else {
+              // Only scroll if already on main content
+              const targetSection = document.querySelector(targetHref);
+              if (targetSection) {
+                  targetSection.scrollIntoView({ behavior: 'smooth' });
+              }
+          }
+
+          // Update active class for scrolling sections
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // Event listener for "Available Positions" button (show careers page)
+      if (availablePositionsBtn) {
+        availablePositionsBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          navigateTo('careers-page');
+        });
+      }
+
+      // Event listener for "Back to Main Site" button (hide careers page, show main content)
+      if (backToMainBtn) {
+        backToMainBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          navigateTo('main-content'); // Use a generic ID to trigger main content display
+          // Optionally scroll to the #join section after returning
+          document.querySelector('#join').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+
+      // --- Modal and Time Slot Booking Logic (Existing) ---
       getStartedButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor link behavior
-        quickCallModal.style.display = 'flex'; // Show the modal
+        event.preventDefault();
+        quickCallModal.style.display = 'flex';
       });
 
       closeModalButton.addEventListener('click', function() {
-        quickCallModal.style.display = 'none'; // Hide the modal
+        quickCallModal.style.display = 'none';
       });
 
-      // Hide modal if clicked outside the content
       quickCallModal.addEventListener('click', function(event) {
         if (event.target === quickCallModal) {
           quickCallModal.style.display = 'none';
         }
       });
 
-      // Optional: Add functionality to select date items
+      bookCallButton.addEventListener('click', function() {
+        quickCallModal.style.display = 'none';
+        successMessage.style.display = 'flex';
+
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 3000);
+      });
+
       const dateItems = document.querySelectorAll('.date-item');
       dateItems.forEach(item => {
         item.addEventListener('click', () => {
-          // Remove 'selected' from all date items
           dateItems.forEach(di => di.classList.remove('selected'));
-          // Add 'selected' to the clicked item
           item.classList.add('selected');
         });
       });
 
-      // Optional: Add functionality to select time slots
       const timeSlots = document.querySelectorAll('.time-slot');
       timeSlots.forEach(slot => {
         slot.addEventListener('click', () => {
-          // Remove 'selected' from all time slots (if only one can be selected)
           timeSlots.forEach(ts => ts.classList.remove('selected'));
-          // Add 'selected' to the clicked slot
           slot.classList.add('selected');
         });
       });
 
-      // Smooth Scrolling and Active Navigation Link Highlighting
-      document.querySelectorAll('.main-nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.main-nav a');
+      // --- Active Navigation Link Highlighting on Scroll (Re-implemented for main page) ---
+      const sections = document.querySelectorAll('#mainContentWrapper section'); // Target sections within the wrapper
 
       window.addEventListener('scroll', () => {
-        let current = '';
+        if (careersPage.style.display === 'block') return; // Don't update nav if on careers page
 
+        let currentActiveSectionId = '';
+
+        // Determine the currently visible section based on scroll position
         sections.forEach(section => {
-          const sectionTop = section.offsetTop;
+          const sectionTop = section.offsetTop - document.querySelector('.top').offsetHeight; // Account for fixed header
           const sectionHeight = section.clientHeight;
-          // Adjust scroll position to activate link slightly before section is fully visible
-          if (pageYOffset >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute('id');
+
+          // Check if the scroll position is within the bounds of the current section
+          // The +50 is a small offset to ensure the active class updates slightly before the section reaches the very top
+          if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionTop + sectionHeight - 50) {
+            currentActiveSectionId = section.getAttribute('id');
           }
         });
 
+        // Add active class to the corresponding nav link
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href').includes(current)) {
+          if (link.getAttribute('href').includes(currentActiveSectionId)) {
             link.classList.add('active');
           }
         });
       });
+
     </script>
   </body>
 </html>
